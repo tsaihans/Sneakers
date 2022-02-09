@@ -7,7 +7,7 @@ import SearchBox from "../common/SearchBox";
 
 const StyledHeader = styled.header`
     background-color: #4c5870;
-    width: 100vw;
+    width: 100%;
     padding-top: 8px;
     padding-bottom: 8px;
     color: #ebedec;
@@ -23,7 +23,7 @@ const Navigator = styled.div`
 `
 
 const SearchInput = styled.div`
-    margin: 16px 0px;
+    margin: 14px 0px;
 `
 
 const NavBar = styled.ul`
@@ -33,12 +33,13 @@ const NavBar = styled.ul`
 `
 
 const NavItem = styled.li`
-    padding: 0px 16px;
+    margin: 12px 16px 0px 16px;
     a{
         text-decoration: none ;
         color: #F0F0F0;
         transition: color .3s;
         font-size: 16px;
+        
     }
     &:hover{
         a {
@@ -46,7 +47,8 @@ const NavItem = styled.li`
         } 
     }
     a i{
-        padding-left: 4px;
+        padding-left: 5px;
+        vertical-align: text-top;
     }
     
 `
@@ -59,7 +61,7 @@ const Header = () => {
                 <HeaderSection>
                     <div>
                         <Link to="/">
-                            <img src={Brand} height={40} />
+                            <img src={Brand} height={40} style={{ marginTop: '6px'}} />
                         </Link>
                     </div>
                     <Navigator>

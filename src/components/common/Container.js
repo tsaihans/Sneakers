@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
     margin: auto;
-    width: 80%;
+    width: 70%;
     background-color: transparent;
 `
 
