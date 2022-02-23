@@ -40,6 +40,10 @@ const Brand = styled.div`
         flex : 0 0 25%;
     }
 
+    @media(max-width: 540px) {
+        flex: 0 0 50%;
+    }
+
 `
 
 const BrandImgContainer = styled.div`
@@ -62,6 +66,8 @@ const BrandName = styled.div`
     padding: 2px 0px;
     text-transform: uppercase;
     background-color: #f3f4f5;
+    display: flex;
+    justify-content: center;
 `
 
 

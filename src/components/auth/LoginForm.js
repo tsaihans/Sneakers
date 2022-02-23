@@ -22,8 +22,15 @@ const Account = styled.div`
     box-shadow: 0 3px 30px rgb(0 0 0 / 30%);
     border-radius: 8px;
 
-    @media(max-width: 1440px) {
+    @media(max-width: 540px) {
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
         flex-direction: column;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        padding: 20px;
     }
 `
 
@@ -47,8 +54,9 @@ const CreateAccount = styled.div`
         color: #fefefe;
     }
     
-    @media(max-width: 1440px) {
+    @media(max-width: 540px) {
         padding: 20px 0;
+        position: relative;
     }
 `
 
@@ -116,7 +124,7 @@ const LoginAccount = styled.div`
     }
 
     
-    @media(max-width: 1440px) {
+    @media(max-width: 540px) {
         padding: 20px 0;
     }
 `
@@ -138,6 +146,12 @@ const StyledInputGroup = styled.div`
     font-size: 16px;
     color: #aaa;
     padding-right: 4px;
+    }
+
+    @media(max-width: 540px) {
+        width: 80%;
+        margin: 0 auto;
+        padding-bottom: 14px;
     }
 `
 

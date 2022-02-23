@@ -18,11 +18,16 @@ const Content = styled.div`
     border-bottom: 1px solid #b2bac4;
     color: #40414f;
 
-
+    
+    @media(max-width: 540px) {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
 `
 
 const NavRow = styled.div`
     display: flex;
+    flex-direction: column;
     `
 
 const NavTitle = styled.div`
@@ -31,16 +36,15 @@ const NavTitle = styled.div`
     color: #686c71;
     padding-bottom: 8px;
 
+    @media(max-width: 540px) {
+        width: 100%;
+    }
     `
 
 const Nav = styled.ul`
     display: flex;
     list-style-type: none;
     padding-inline-start: 0px;
-
-    @media(max-width: 1440px) {
-        flex-direction: column;
-    }
     `
 
 const NavItem = styled.li`

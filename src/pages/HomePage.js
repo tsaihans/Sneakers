@@ -15,7 +15,7 @@ const HomePage = () => {
     return (
         <DefaultLayout>
             <BackgroundColor>
-                <Container>
+                <Container width={80}>
                     <Hero>
                         <Major />
                     </Hero>    
