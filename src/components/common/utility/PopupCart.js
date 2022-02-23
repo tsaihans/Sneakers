@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Modal } from 'antd';
 import { useSelector, useDispatch } from "react-redux";
 import { cartItems, removeFromCart, cleanCart, closeCart } from "../../../features/cart/cartSlice";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const StyledTable = styled.table`
     text-align: center;
@@ -32,8 +32,6 @@ const StyledSum = styled.div`
 `
 
 const PopupCart = ({ cartVisible }) => {
-
-    const navigate = useNavigate();
 
     const cart = useSelector(cartItems);
     const dispatch = useDispatch();

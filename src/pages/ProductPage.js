@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import ProductLayout from "../components/layout/ProductLayout"
 import Container from "../components/common/Container";
@@ -9,11 +9,10 @@ import SizeSelector from "../components/common/utility/SizeSelector";
 import { Image } from "antd";
 
 
-import { useSelector, useDispatch } from "react-redux";
-import {
-    cartItems,
-    addToCart
-} from "../features/cart/cartSlice";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../features/cart/cartSlice";
+import AuthContext from "../components/auth/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 
 const ProductWrapper = styled.div`
@@ -107,6 +106,10 @@ const CartOrBuy = styled.div`
 const ProductImgContainer = styled.div`
     flex: 3;
     text-align: center;
+    
+    @media(max-width: 540px) {
+        width: 100%;
+    }
 `
 
 const ProductDescribeTitleWrapper = styled.div`
@@ -150,11 +153,17 @@ const ProductPage = ({
     productImg
 }) => {
     
-    const cart = useSelector(cartItems);
     const dispatch = useDispatch();
+    const { isAuthenticated } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const [ count, setCount ] = useState(1);
     const [ size, setSize ] = useState("UK7");
+
+    const handleCheckoutNow = () => {
+        alert(`已從您的新用卡中扣除${salePrice*count}元`)
+    };
+
 
     return (
         <ProductLayout>
@@ -189,20 +198,23 @@ const ProductPage = ({
                             </QuantityWrapper>
                             <CartOrBuy>
                                 <PrimaryBtn 
-                                onClick={() => dispatch(addToCart({
+                                onClick={isAuthenticated ? 
+                                    () => dispatch(addToCart({
                                     product: productName,
                                     size: size,
                                     price: salePrice,
                                     count: count,
-                                }))}
+                                    })):
+                                    () => navigate("/sneakers/login")
+                                    } 
                                 >加入購物車
                                 </PrimaryBtn>
-                                <PrimaryBtn>立即購買</PrimaryBtn>
+                                <PrimaryBtn onClick={isAuthenticated ? () => handleCheckoutNow() : () => navigate("/sneakers/login")}>立即購買</PrimaryBtn>
                             </CartOrBuy>
                         </ProductInfo>
                         <ProductImgContainer>
                             <Image 
-                            width={400}
+                            width={"70%"}
                             src={productImg}
                             />
                         </ProductImgContainer>
