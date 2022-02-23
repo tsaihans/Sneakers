@@ -12,6 +12,19 @@ const AuthorWrapper = styled.div`
     padding: 40px 20px;
     border-radius: 80px;
     position: relative;
+
+    @media(max-width: 540px) {
+        flex-direction: column;
+    }
+
+    &:after {
+        content: "此作品為無涉及任何商業行為";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        color: #BEBEBE;
+    }
 `
 
 const ImageContainer = styled.div`
@@ -22,6 +35,12 @@ const ImageContainer = styled.div`
 
     span {
         font-size: 20px;
+    }
+
+    @media(max-width: 540px) {
+        margin: 0 auto;
+        width: 100%;
+        padding-bottom: 20px;
     }
 `
 
@@ -39,12 +58,20 @@ const AuthorImage = styled.div`
         display: block;
         padding-top: 100%;
     }
+
+    @media(max-width: 540px) {
+        background-size: cover;
+    }
 `
 
 const DescriptionContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @media(max-width: 540px) {
+        padding-bottom: 10px;
+    }
 `
 
 const DescriptionColumn = styled.div`
@@ -71,13 +98,6 @@ const SkillList = styled.div`
     padding-bottom: 6px;
 `
 
-const Statement = styled.div`
-    color: #BEBEBE;
-    position: absolute;
-    bottom: 0;
-    right: 80px;
-`
-
 const AboutPage = () => {
     return(
         <DefaultLayout>
@@ -92,14 +112,14 @@ const AboutPage = () => {
                             <DescriptionColumn>國立高雄大學 運動健康與休閒學系</DescriptionColumn>
                             <DescriptionColumn>國立中正大學 資訊管理學系研究所</DescriptionColumn>
                             <DescriptionColumn>Birth: 1996/11</DescriptionColumn>
-                            <DescriptionColumn>Skill in This Project</DescriptionColumn>
+                            <DescriptionColumn>Skills in This Project</DescriptionColumn>
                             <SkillList>(1) HTML/CSS</SkillList>
                             <SkillList>(2) React.js</SkillList>
                             <SkillList>(3) Redux</SkillList>
                             <SkillList>(4) Git</SkillList>
                             <SkillList>(5) npm/yarn</SkillList>
+                            <SkillList>(6) gh-page</SkillList>
                         </DescriptionContainer>
-                        <Statement>此作品為無涉及任何商業行為</Statement>
                     </AuthorWrapper>
                 </Hero>
             </Container>

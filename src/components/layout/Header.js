@@ -87,14 +87,16 @@ const NavToggle = styled.a`
     
     @media(max-width: 1440px) {
         display: block;
-        margin-left: 12px;
+        margin-left: 36px;
         margin-top: 2px;
+
         span {
             width: 32px;
             height: 2px;
-            background-color: #f0f0f0;
+            background-color: #E0E0E0;
 
             position: absolute;
+            right: 0;
         }
 
         span:nth-child(1) {
