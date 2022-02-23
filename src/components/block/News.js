@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import NewsBox from "../common/NewsBoxjs";
+import NewsBox from "../common/utility/NewsBoxjs";
 import news1 from "../../image/news/news1.jpg";
 import news2 from "../../image/news/news2.jpeg";
 import news3 from "../../image/news/news3.jpg";
@@ -8,10 +8,8 @@ import news4 from "../../image/news/news4.jpg";
 import news5 from "../../image/news/news5.jpg";
 import news6 from "../../image/news/news6.jpg";
 
-const NewContainer = styled.div`
-`
 
-const NewsContainerTitle = styled.div`
+const NewsSectionTitle = styled.div`
     margin: 0px 20px 0px 20px;
     padding-bottom: 4px;
     border-bottom: 2px solid #4c5870;
@@ -22,15 +20,18 @@ const NewsContainerTitle = styled.div`
 const Row = styled.div`
     display: flex;
     flex-direction: row;
-    flex: 1;
     justify-content: space-between;
+    
+    @media(max-width: 1440px) {
+        flex-direction: column;
+    }
 `
 
 
 const NewsSection = () => {
     return (
-        <NewContainer>
-            <NewsContainerTitle>NEWS</NewsContainerTitle>
+        <div>
+            <NewsSectionTitle>NEWS</NewsSectionTitle>
             <Row>
                 <NewsBox 
                 title={"官方新聞 / 把麥塊穿上身 PUMA X MINECRAFT 聯名系列 2 月 8 日開賣"} 
@@ -85,7 +86,7 @@ const NewsSection = () => {
                 views={12501}
                 />
             </Row>
-        </NewContainer>
+        </div>
     );
 };
 

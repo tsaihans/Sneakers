@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Carousel } from "antd";
-import c1 from "../../image/carousel/c1.jpg";
-import c2 from "../../image/carousel/c2.jpg";
-import c3 from "../../image/carousel/c3.jpg";
+import c1 from "../../../image/carousel/c1.jpg";
+import c2 from "../../../image/carousel/c2.jpg";
+import c3 from "../../../image/carousel/c3.jpg";
 
 const CarouselContainer = styled.div`
     width: 100%;

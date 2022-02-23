@@ -19,6 +19,11 @@ const BrandSectionContainer = styled.div`
 
 const BrandList = styled.div`
     display: flex;
+    width: 100%;
+    @media(max-width: 1440px) {
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
 `
 
 const Brand = styled.div`
@@ -29,6 +34,12 @@ const Brand = styled.div`
         box-shadow: 3px 6px 6px #ccc;
         cursor: pointer;
     }
+
+    
+    @media(max-width: 1440px) {
+        flex : 0 0 25%;
+    }
+
 `
 
 const BrandImgContainer = styled.div`

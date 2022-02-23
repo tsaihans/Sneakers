@@ -12,6 +12,7 @@ const ContactSectionTitle = styled.div`
 const ContactContainer = styled.div`
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 ` 
 
 const ContactInfo = styled.div`
@@ -26,7 +27,6 @@ const Title = styled.div`
     display: block;
     font-size: 24px;
     margin-bottom: 8px;
-    text-decoration: underline;
 `
 
 const Info = styled.div`
@@ -78,7 +78,13 @@ const SocialBtn = styled.a`
         border-color: #7795f8;
     }
 `
+const MapContainer = styled.div`
+    width: 600px;
 
+    @media(max-width: 1440px) {
+        width: 100%;
+    }
+`
 
 const ContactSection = () => {
     return (
@@ -89,17 +95,17 @@ const ContactSection = () => {
                     <Title>PHONE&TEL</Title>
                     <Info>
                         <i class="fas fa-phone"></i>
-                        <a href="#!">07-123-4567</a>
+                        07-123-4567
                     </Info>
                     <Title>LOCATION</Title>
                     <Info>
                         <i class="fas fa-map-marker-alt"></i>
-                        <a href="#!">高雄市前金區中山一路</a>
+                        高雄市前金區中山一路
                     </Info>
                     <Title>HOURS</Title>
                     <Info>
                         <i class="fas fa-map-marker-alt"></i>
-                        <a href="#!">上午 11:00 至下午 6:00、週四公休</a>
+                        上午 11:00 至下午 6:00、週四公休
                     </Info>
                     <Title>SOCIAL NETWORK</Title>
                     <SocialBtnGroup>
@@ -120,9 +126,9 @@ const ContactSection = () => {
                         </SocialBtn>
                     </SocialBtnGroup>
                 </ContactInfo>
-                <div>
-                    <iframe width="600" height="400" style={{ border: 0 }} loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJUxqWpocEbjQRIUwU_iCWP4w&key=AIzaSyAV_xUbg2TtwFyyXOyOVNkzfHqutu8PKzo"></iframe>
-                </div>
+                <MapContainer>
+                    <iframe width="100%" height="400" style={{ border: 0 }} loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJUxqWpocEbjQRIUwU_iCWP4w&key=AIzaSyAV_xUbg2TtwFyyXOyOVNkzfHqutu8PKzo"></iframe>
+                </MapContainer>
             </ContactContainer>    
         </div>
     );

@@ -23,14 +23,14 @@ const HomePage = () => {
             </BackgroundColor>
             <BackgroundColor grey={true}>
                 <Container>
-                    <Hero>
+                    <Hero id="news">
                         <NewsSection />
                     </Hero>    
                 </Container>
             </BackgroundColor>   
             <BackgroundColor>
-                <Container>
-                    <Hero>
+                <Container >
+                    <Hero id="location">
                         <ContactSection />
                     </Hero>    
                 </Container>

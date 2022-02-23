@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import ImageCarousel from "../../components/common/ImgeCarousel";
+import ImageCarousel from "../common/utility/ImgeCarousel";
 import c1 from "../../image/carousel/c1.jpg";
 import c2 from "../../image/carousel/c2.jpg";
 import BrandSection from "./Brand";
@@ -11,17 +11,31 @@ const BannerContainer = styled.div`
     width: 100%;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    @media(max-width: 1440px) {
+        flex-direction: column;
+    }
 `
 const BannerCarouselSection = styled.div`
     width: 66.35%;
     height: 408px;
     margin-right: 0.35%;
+
+    @media(max-width: 1440px) {
+        flex: 1;
+        width: 100%;
+    }
 `
 
 const BannerSection = styled.div`
     display: flex;
     flex-direction: column;
     width: 33.3%;
+
+    @media(max-width: 1440px) {
+        flex: 1;
+        width: 100%;
+    }
 `
 
 const Banner = styled.div`
@@ -31,6 +45,7 @@ const Banner = styled.div`
     width: 100%;
     height: 198px;
     margin-bottom: 4px;
+
 `
 
 const Major = () => {

@@ -17,16 +17,12 @@ const Content = styled.div`
     padding-bottom: 8px;
     border-bottom: 1px solid #b2bac4;
     color: #40414f;
-    padding: 0px 220px;
+
+
 `
 
 const NavRow = styled.div`
-
-    padding: 0px 80px;
-    
-    &:last-child{
-        padding-right: 0px;
-    }
+    display: flex;
     `
 
 const NavTitle = styled.div`
@@ -34,16 +30,23 @@ const NavTitle = styled.div`
     font-weight: 600;
     color: #686c71;
     padding-bottom: 8px;
+
     `
 
 const Nav = styled.ul`
+    display: flex;
     list-style-type: none;
     padding-inline-start: 0px;
+
+    @media(max-width: 1440px) {
+        flex-direction: column;
+    }
     `
 
 const NavItem = styled.li`
-    padding-bottom: 16px;
     font-size: 16px;
+    padding: 5px 8px;
+    cursor: pointer;
 
     a{
         text-decoration: none ;
@@ -56,13 +59,10 @@ const NavItem = styled.li`
             color: #7795f8;
         } 
     }
-
-    i{
-        padding-right: 8px;
-    }
     `
 
 const Delivery = styled.div`
+    margin: 0px 8px;
     background-image: ${(props) => `url(${props.img})`};
     background-size: contain;
     background-repeat: no-repeat;
@@ -78,6 +78,10 @@ const FooterBrand = styled.div`
     background-size: contain;
     background-position: center;
     padding-top: 4%;
+
+    @media(max-width: 1440px) {
+        padding-top: 10%;
+    }
 `
 
 const Footer = () => {
