@@ -161,7 +161,7 @@ const ProductPage = ({
     const [ size, setSize ] = useState("UK7");
 
     const handleCheckoutNow = () => {
-        alert(`已從您的新用卡中扣除${salePrice*count}元`)
+        alert(`已從您的信用卡中扣除${salePrice*count}元`)
     };
 
 
