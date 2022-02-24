@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Modal } from 'antd';
 import { useSelector, useDispatch } from "react-redux";
 import { cartItems, removeFromCart, cleanCart, closeCart } from "../../../features/cart/cartSlice";
-import { useNavigate } from "react-router-dom";
 
 const StyledTable = styled.table`
     text-align: center;

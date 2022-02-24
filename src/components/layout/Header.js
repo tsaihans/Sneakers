@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styled, { css } from "styled-components";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Container from "../common/Container";
 import Brand from "../../image/Brand.png";
 import SearchBox from "../common/utility/SearchBox";
@@ -41,7 +41,7 @@ const NavBar = styled.ul`
     display: flex;
     padding-inline-start: 0px;
 
-    @media(max-width: 1440px) {
+    @media(max-width: 540px) {
         position: fixed;
         left: 0;
         top: 0;
@@ -56,12 +56,16 @@ const NavBar = styled.ul`
 
         opacity: 0; /* 透明度 */
         visibility: hidden;
+
+        opacity: ${(props) => props.popup ? 1 : 0};
+        visibility: ${(props) => props.popup ? "visible" : "hidden" };
+        
         transition: all 0.3s;
 
-        &:target {
+        /* &:target {
         opacity: 1;
         visibility: visible;
-        }
+        } */
 
         li {
             text-align: center;
@@ -81,11 +85,12 @@ const NavBar = styled.ul`
     }
 `
 
-const NavToggle = styled.a`
+const NavToggle = styled.div`
     display: none;
     position: relative;
+    cursor: pointer;
     
-    @media(max-width: 1440px) {
+    @media(max-width: 540px) {
         display: block;
         margin-left: 36px;
         margin-top: 2px;
@@ -113,13 +118,15 @@ const NavToggle = styled.a`
     }
 `
 
-const CloseNav = styled.a`
-    @media(max-width: 1440px) {
+const CloseNav = styled.div`
+    @media(max-width: 540px) {
 
         position: absolute;
         top: 40px;
         right: 40px;
         display: block;
+        cursor: pointer;
+
         span {
             width: 40px;
             height: 2px;
@@ -200,7 +207,7 @@ const StyledCart = styled.span`
 const Header = ( { fixed }) => {
 
     const { isAuthenticated, logout} = useContext(AuthContext);
-    const navigate = useNavigate();
+    const [ popupMenu, setPopupMenu ] = useState(false);
 
     const cart = useSelector(cartItems);
     const cartVisible = useSelector(cartVisibleState);
@@ -220,13 +227,13 @@ const Header = ( { fixed }) => {
                             <SearchInput>
                                 <SearchBox />
                             </SearchInput>
-                            <NavToggle href="#popup-menu">
+                            <NavToggle onClick={() => setPopupMenu(true)}>
                                 <span></span>
                                 <span></span>
                                 <span></span>
                             </NavToggle>
-                            <NavBar id="popup-menu">
-                                <CloseNav a href="#!">
+                            <NavBar popup={popupMenu}>    
+                                <CloseNav onClick={() => setPopupMenu(false)}>
                                     <span></span>
                                     <span></span>
                                 </CloseNav>
